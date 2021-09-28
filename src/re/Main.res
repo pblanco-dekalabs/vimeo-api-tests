@@ -1,21 +1,16 @@
 /*
   Consume Vimeo opaque descriptor.
 */
+open Vimeo
 
-type opts = {
-  path: string
-}
-type client = opts => Js.Promise.t<string>
-
-@module("../ts/vimeo")
-external start: () => client = "start"
-
-let req = start()
+let req = create()
 
 req({
   path: "/channels/staffpicks/videos"
 })->Js.Promise.then_(res => {
-  Js.log(res)
+  res.body.data->Js.Array.forEach(datum => {
+    Js.log(datum)
+  }, _)
   Js.log("Done!")
   Js.Promise.resolve(true)
 }, _)->ignore

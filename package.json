@@ -16,6 +16,7 @@
     "ts:build": "tsc",
     "re:build": "rescript",
     "re:start": "rescript build -w",
-    "start": "node src/re/main.bs.js"
+    "start": "node src/re/Main.bs.js",
+    "dev": "yarn re:build && yarn ts:build && yarn start"
   }
 }
