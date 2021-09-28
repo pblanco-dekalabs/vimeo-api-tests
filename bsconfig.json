@@ -1,0 +1,17 @@
+{
+  "name": "vimeo-api-tests",
+  "sources": [
+    {
+      "dir": "src/re",
+      "subdirs": true
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "bs-dependencies": []
+}
